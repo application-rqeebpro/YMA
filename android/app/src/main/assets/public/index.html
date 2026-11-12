@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <script>
+      (function() {
+        // Filter out Vite HMR WebSocket connection logs in iframe dev environment
+        const origWarn = console.warn;
+        const origError = console.error;
+        console.warn = function(...args) {
+          if (args[0] && typeof args[0] === 'string' && args[0].includes('[vite]')) return;
+          origWarn.apply(console, args);
+        };
+        console.error = function(...args) {
+          if (args[0] && typeof args[0] === 'string' && (args[0].includes('[vite]') || args[0].includes('WebSocket') || args[0].includes('vite-hmr'))) return;
+          origError.apply(console, args);
+        };
+
+        // Safe alert replacement for iFrame sandbox environment
+        window.alert = function(message) {
+          try {
+            let container = document.getElementById('applet-toast-container');
+            if (!container) {
+              container = document.createElement('div');
+              container.id = 'applet-toast-container';
+              container.style.cssText = 'position:fixed;bottom:24px;left:50%;transform:translateX(-50%);z-index:99999;display:flex;flex-direction:column;gap:8px;max-width:90vw;width:400px;pointer-events:none;';
+              document.body.appendChild(container);
+            }
+            const toast = document.createElement('div');
+            toast.style.cssText = 'background:#0f172a;color:#f8fafc;padding:12px 18px;border-radius:12px;font-size:13px;font-family:sans-serif;box-shadow:0 10px 25px -5px rgba(0,0,0,0.3);border:1px solid #334155;text-align:center;direction:rtl;pointer-events:auto;transition:opacity 0.25s ease-out;';
+            toast.textContent = String(message || '');
+            container.appendChild(toast);
+            setTimeout(function() {
+              toast.style.opacity = '0';
+              setTimeout(function() { toast.remove(); }, 300);
+            }, 3500);
+          } catch (err) {
+            console.log('[Notice]', message);
+          }
+        };
+      })();
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0052cc" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="الميكاترونكس" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <title>أكاديمية الميكاترونكس اليمنية | تعلم الميكاترونكس بطريقة أسهل</title>
+    <meta name="description" content="منصة تعليمية متخصصة لطلاب السنة الأولى في هندسة الميكاترونكس في الجامعات اليمنية مع ميزة اشرح لي درس اليوم لتحليل الصور والملفات والنصوص - افهم الميكاترونكس بطريقة سهلة" />
+    <meta property="og:title" content="أكاديمية الميكاترونكس اليمنية" />
+    <meta property="og:description" content="منصة تعليمية متخصصة لطلاب السنة الأولى في هندسة الميكاترونكس في الجامعات اليمنية مع ميزة اشرح لي درس اليوم لتحليل الصور والملفات والنصوص - افهم الميكاترونكس بطريقة سهلة" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Tajawal:wght@400;500;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <script type="module" crossorigin src="/assets/index-6oGkM4HE.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/vendor-icons-BrjWSv45.js">
+    <link rel="modulepreload" crossorigin href="/assets/vendor-markdown-CM_shNld.js">
+    <link rel="modulepreload" crossorigin href="/assets/vendor-react-CPSbFsuV.js">
+    <link rel="modulepreload" crossorigin href="/assets/vendor-pdf-KU_Z7mJe.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-CFvpaDIK.css">
+  <link rel="manifest" href="/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/registerSW.js"></script></head>
+  <body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 font-sans antialiased selection:bg-blue-600 selection:text-white min-h-screen">
+    <div id="root"></div>
+  </body>
+</html>
+

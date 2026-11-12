@@ -1,0 +1,42 @@
+[
+  {
+    "id": "book-serway-physics",
+    "title": "Physics for Scientists and Engineers",
+    "originalTitle": "Physics for Scientists and Engineers — Serway",
+    "authors": [
+      "Raymond A. Serway",
+      "John W. Jewett"
+    ],
+    "edition": "الطبعة المعتمدة (تحدد بدقة عند رفع النسخة)",
+    "language": "الإنجليزية (English)",
+    "field": "الفيزياء العامة والهندسية (General and Engineering Physics)",
+    "targetMajor": "هندسة الميكاترونكس (Mechatronics Engineering)",
+    "description": "المرجع الأكاديمي العالمي المعتمد في الجامعات اليمنية وكليات الهندسة لتدريس مساقات الفيزياء العامة 1 و 2 (الميكانيكا، الكهرومغناطيسية، والدوائر الكهربائية). يوفر تأسيسًا متينًا لمهندسي الميكاترونكس.",
+    "hasFile": false,
+    "processingStatus": "not_uploaded",
+    "chunksCount": 0,
+    "createdAt": "2026-10-25T00:00:00.000Z",
+    "updatedAt": "2026-10-26T14:50:46.425Z",
+    "officialExternalUrl": "https://www.cengage.com/c/physics-for-scientists-and-engineers-10e-serway/9781337553292/",
+    "topicsCovered": [
+      "Physical Quantities and Units",
+      "Vectors",
+      "Motion in One Dimension",
+      "Newton's Laws of Motion",
+      "Work and Energy",
+      "Momentum and Collisions",
+      "Rotational Motion",
+      "Oscillations",
+      "Waves",
+      "Electric Fields",
+      "Electric Potential",
+      "Capacitance",
+      "Current and Resistance",
+      "Direct-Current Circuits",
+      "Magnetic Fields",
+      "Electromagnetic Induction",
+      "Alternating-Current Circuits"
+    ],
+    "accessRole": "student"
+  }
+]
